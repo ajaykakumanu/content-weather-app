@@ -16,10 +16,10 @@ pipeline {
 			sh'rm -rf src/'
 
                     sh 'git clone https://github.com/linuxacademy/content-weather-app.git src'
-			sh 'cd src'
+		
 			 sh 'ls -la'
-		    sh 'docker image build -t linuxacademy/weather-app:v14 .'
-                    sh 'docker container run -d --name weather-app14 -p  8092:3010 linuxacademy/weather-app:v14'
+		    sh 'docker image build -t linuxacademy/weather-app:v17 .'
+                    sh 'docker container run -d --name weather-app17 -p  8096:3010 linuxacademy/weather-app:v17'
                 }
             }
         }
