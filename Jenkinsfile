@@ -18,8 +18,8 @@ pipeline {
                     sh 'git clone https://github.com/linuxacademy/content-weather-app.git src'
 			sh 'cd src'
 			 sh 'ls -la'
-		    sh 'docker image build -t linuxacademy/weather-app:v7 .'
-                    sh 'docker container run -d --name weather-app7 -p  ${Service_PORT}:${Docker_PORT} linuxacademy/weather-app:v7'
+		    sh 'docker image build -t linuxacademy/weather-app:v14 .'
+                    sh 'docker container run -d --name weather-app14 -p  8092:3010 linuxacademy/weather-app:v14'
                 }
             }
         }
