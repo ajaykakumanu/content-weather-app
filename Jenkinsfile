@@ -12,21 +12,12 @@ pipeline {
             steps {
 		echo 'Image starts'
                 script {
-                    app = docker.build("vakaws/weatherApp15")
-                    sh 'docker container run -d --name weather-app5 -p  ${Service_PORT}:${Docker_PORT} vakaws/weatherApp15'
+                   
+		    sh 'docker image build -t linuxacademy/weather-app:v5 .'
+                    sh 'docker container run -d --name weather-app5 -p  ${Service_PORT}:${Docker_PORT} linuxacademy/weather-app:v5'
                 }
             }
         }
-        stage('Push Docker Image') {
-           
-            steps {
-                script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'docker_hub') {
-                        app.push("${env.BUILD_NUMBER}")
-                        app.push("latest")
-                    }
-                }
-            }
-        }
+       
     }
 }
