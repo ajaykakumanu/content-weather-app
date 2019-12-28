@@ -1,7 +1,7 @@
 FROM node
 LABEL org.label-schema.version=v1.1
 ENV NODE_ENV="production"
-ENV Docker_PORT 8080
+ENV Docker_PORT 3010
 
 RUN mkdir -p /var/node
 ADD src/ /var/node/
