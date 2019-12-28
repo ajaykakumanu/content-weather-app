@@ -10,10 +10,10 @@ pipeline {
          stage('Build Docker Image') {
            
             steps {
-			      echo 'Image starts'
+		echo 'Image starts'
                 script {
                     app = docker.build("vakaws/weatherApp15")
-                     sh 'docker run -p ${Service_PORT}:${Docker_PORT} -d vakaws/weatherApp15'
+                    sh 'docker container run -d --name weather-app5 -p  ${Service_PORT}:${Docker_PORT} vakaws/weatherApp15'
                 }
             }
         }
